@@ -1,0 +1,233 @@
+# =============================================================================
+# Complete .gitignore: Python + uv + Git LFS + Data Engineering (Azure/AWS/Databricks)
+# =============================================================================
+# NOTE: Do NOT ignore uv.lock or .python-version. Commit both for reproducible builds.
+# NOTE: Git LFS is configured in .gitattributes, not here. Do not ignore files you
+#       track with LFS (e.g. *.parquet), or they will never be committed.
+
+# === uv ===
+.uv/
+.uv-cache/
+.uv_cache/
+
+# === Virtual Environments ===
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+
+# === Python Caches & Build Artifacts ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.cache/
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+pip-wheel-metadata/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+*.egg
+.installed.cfg
+MANIFEST
+# *.spec   <- uncomment only if you use PyInstaller (it matches any *.spec file)
+
+# === Testing & Coverage ===
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+nosetests.xml
+*.cover
+*.py,cover
+junit.xml
+reports/
+
+# === Environment Variables & Secrets ===
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+.netrc
+secrets.json
+credentials.json
+service-account*.json
+*.secret
+*.secrets
+
+# === Cloud: AWS / Azure / GCP / Databricks ===
+.aws/
+.azure/
+.gcloud/
+.databricks/
+.databrickscfg
+.databricks-connect
+local.settings.json
+.azure-functions/
+.bundle/
+cdk.out/
+.serverless/
+.sam/
+samconfig.toml.bak
+
+# === Infrastructure as Code (Terraform / Pulumi / Bicep) ===
+.terraform/
+.terraform.lock.hcl.bak
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+!example.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+Pulumi.*.yaml
+!Pulumi.yaml
+
+# === Spark / Hive / Delta local artifacts ===
+spark-warehouse/
+metastore_db/
+derby.log
+.spark-events/
+*.crc
+_SUCCESS
+checkpoint/
+checkpoints/
+
+# === dbt / Airflow / Orchestration ===
+target/
+dbt_packages/
+dbt_modules/
+.dbt/
+logs/
+airflow.db
+airflow.cfg
+airflow-webserver.pid
+standalone_admin_password.txt
+.dagster/
+.prefect/
+mlruns/
+mlartifacts/
+
+# === Jupyter Notebooks ===
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.virtual_documents/
+# Tip: use nbstripout to commit notebooks without outputs instead of ignoring them.
+
+# === Local Databases & Data Scratch ===
+*.sqlite
+*.sqlite3
+*.db
+*.duckdb
+*.duckdb.wal
+*.mdb
+tmp/
+temp/
+.tmp/
+scratch/
+sandbox/
+# Uncomment if you keep large raw data outside Git or in DVC/LFS pointers only:
+# data/raw/
+# data/interim/
+# data/processed/
+
+# === DVC (if used) ===
+/.dvc/cache
+/.dvc/tmp
+/.dvc/config.local
+
+# === Logs ===
+*.log
+*.log.*
+logs/
+npm-debug.log*
+
+# === Compiled / Native ===
+*.so
+*.dylib
+*.dll
+*.exe
+*.o
+*.a
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# === Docker / Containers ===
+docker-compose.override.yml
+.docker/
+
+# === Documentation builds ===
+docs/_build/
+site/
+.mkdocs_cache/
+
+# === IDE & Editor Files ===
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.history/
+.ropeproject/
+.spyderproject
+.spyproject
+*.sublime-workspace
+*.sublime-project
+
+# === OS Files ===
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
